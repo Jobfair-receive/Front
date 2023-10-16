@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     width: 100%;
-    height: 100%;
+    height: calc(100% - 80px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,7 +61,7 @@ export const ChatBox = styled.div`
     margin-bottom: 80px;
 `
 export const ChatInput = styled.input`
-    height: 100%;
+    height: 90px;
     width: 100%;
     background-color: #F0F0F0;
     outline: none;

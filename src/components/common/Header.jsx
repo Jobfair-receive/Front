@@ -7,6 +7,8 @@ const NavBar = styled.nav`
     background-color: #7588DF;
     display: flex;
     align-items: center;
+    z-index: 1;
+    position: sticky;
 `   
 
 const Logo = styled.span`
