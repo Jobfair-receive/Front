@@ -3,7 +3,6 @@ import * as S from "./Chat.style"
 import ThoughtEmoji from "../../asset/images/emoji_thought.svg";
 import SendEmoji from "../../asset/images/paper-airplane.svg";
 
-
 export default function Chat(){
     return(
         <S.Wrapper>

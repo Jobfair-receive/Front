@@ -3,8 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import PretendardSemiBold from './asset/font/Pretendard-SemiBold.woff';
 import PretendardRegular from './asset/font/Pretendard-Regular.woff';
 import PretendardMedium from './asset/font/Pretendard-Medium.woff';
-
-
+import PretendardBlack from './asset/font/Pretendard-Black.woff';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -39,6 +38,12 @@ export const GlobalStyle = createGlobalStyle`
         src: local('PretendardMedium');
         font-style: normal;
         src: url(${PretendardMedium}) format('woff');
+    }
+    @font-face {
+        font-family: 'PretendardBlack';
+        src: local('PretendardBlack');
+        font-style: normal;
+        src: url(${PretendardBlack}) format('woff');
     }
 
 
