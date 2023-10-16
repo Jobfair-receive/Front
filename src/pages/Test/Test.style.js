@@ -4,38 +4,45 @@ export const TestText = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 48px;
-    margin: 20px;
+    font-size: 3rem;
+    margin: 1.2rem;
+    font-family: PretendardSemiBold;
 `
 export const TestInfo = styled.ul`
     li::marker {
     color: black;
   }
   li{
-    margin: 10px;
+    margin: 0.6rem;
+    font-family: PretendardRegular;
   }
   background-color: #E8E8E8;
-  padding: 20px 70px;
-  margin: 20px 50px;
-  border-radius: 10px;
-  font-size: 24px;
+  padding: 1.2rem 70px;
+  margin: 1.2rem 3rem;
+  border-radius: 0.6rem;
+  font-size: 1.5rem;
 `
 
 export const TestForm = styled.form`
- margin: auto 50px;
+ margin: auto 3rem;
+`
+
+export const TestPart = styled.div`
+ opacity: ${props => props.selected ? 1 : 0.5};
 `
 export const Question = styled.div`
-    font-size: 36px;    
-    margin-left: 20px;
+    font-size: 2.2rem;    
+    margin: 3.6rem 1.2rem;
+    font-family: PretendardMedium;
 `
 export const Radios = styled.fieldset`
-    margin-bottom: 20px;
+    margin-bottom: 1.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: none;
-    border-bottom: 2px solid #D6D6D6;
-    padding: 20px 80px 110px;  
+    border-bottom: 0.12rem solid #D6D6D6;
+    padding: 1.2rem 4.8rem 6.6rem;  
     
     [type="radio"]{
         vertical-align: middle;
@@ -83,9 +90,10 @@ export const Label = styled.label`
 
 export const Span = styled.span`
     position: absolute;
-    bottom: -45px;
+    bottom: -2.7rem;
     text-align: center;
     font-size: 1.2rem;
     color:#333333;
-    width: 200px;
+    width: 12rem;
+    font-family: PretendardMedium;
 `

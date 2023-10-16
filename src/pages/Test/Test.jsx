@@ -1,7 +1,13 @@
+import { useState } from "react";
 import * as S from "./Test.style"
-
+import Question from "./question";
 export default function Test(){
-    return <div>
+    const [selectedTestPart, setSelectedTestPart] = useState(0);
+    const handleTestPartClick = (index) => {
+        setSelectedTestPart(index+1);
+    };
+
+    return <div style={{margin: "0px 20%"}}>
         <S.TestText>뭐시기 뭐시기 검사</S.TestText>
         <S.TestInfo>
             <li>질문은 총 25개로 총 소요시간은 한 10분정도 될듯?</li>
@@ -10,8 +16,11 @@ export default function Test(){
         </S.TestInfo>
         
         <S.TestForm>
-            {["질문1", "질문2", "질문3"].map((question, index) => (
-                <>
+            {Question.map((question, index) => (
+                <S.TestPart
+                    onClick={() => handleTestPartClick(index)}
+                    selected={selectedTestPart === index}
+                >
                     <S.Question>{question}</S.Question>
                     <S.Radios>
                         <S.Label borderColor="#CD6B73">
@@ -32,7 +41,7 @@ export default function Test(){
                             <S.Span>매우 그렇다.</S.Span>
                         </S.Label>
                     </S.Radios>
-                </>  
+                </S.TestPart>  
             ))}
         </S.TestForm>
     </div>
