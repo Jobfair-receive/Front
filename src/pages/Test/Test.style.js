@@ -49,8 +49,6 @@ export const Radios = styled.fieldset`
         appearance: none;
         border: max(6px, 0.2em) solid gray;
         border-radius: 50%;
-        width: 1.25em;
-        height: 1.25em;
         transition: border 0.5s ease-in-out;
         border-color: ${props => props.borderColor || 'gray'};
     }
@@ -85,7 +83,11 @@ export const Label = styled.label`
     }
 
     position: relative;
+`
 
+export const Input = styled.input`
+    width: ${props => props.Size};
+    height: ${props => props.Size};
 `
 
 export const Span = styled.span`

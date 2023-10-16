@@ -1,12 +1,23 @@
 import { useState } from "react";
 import * as S from "./Test.style"
 import Question from "./question";
+
 export default function Test(){
+
     const [selectedTestPart, setSelectedTestPart] = useState(0);
     const handleTestPartClick = (index) => {
         setSelectedTestPart(index+1);
     };
 
+    const [answers, setAnswers] = useState({});
+
+    const handleRadioChange = (index) => (event) => {
+        setAnswers({
+            ...answers,
+            [index]: event.target.value,
+        });
+    };
+    
     return <div style={{margin: "0px 20%"}}>
         <S.TestText>뭐시기 뭐시기 검사</S.TestText>
         <S.TestInfo>
@@ -14,7 +25,6 @@ export default function Test(){
             <li style={{color: '#FF0015', marker: 'marker: none'}}>내가 지금까지 해 온 행동, 현재의 모습에 따라 정직하게 답해주세요.</li>
             <li>검사의 정확도를 위해 가급적 ‘보통’ 외의 것을 선택하기 바랍니다.</li>
         </S.TestInfo>
-        
         <S.TestForm>
             {Question.map((question, index) => (
                 <S.TestPart
@@ -23,26 +33,26 @@ export default function Test(){
                 >
                     <S.Question>{question}</S.Question>
                     <S.Radios>
-                        <S.Label borderColor="#CD6B73">
-                            <input type="radio" name={`contact${index}`} value="5" style={{width: '110px', height: '110px'}}/>
-                            <S.Span>매우 그렇지 않다.</S.Span>
-                        </S.Label>
-                        <S.Label borderColor="#CD6B73">
-                            <input type="radio" name={`contact${index}`} value="4" style={{width: '80px', height: '80px'}}/>
-                        </S.Label>
-                        <S.Label>
-                            <input type="radio" name={`contact${index}`} value="3" style={{width: '50px', height: '50px'}}/>
-                        </S.Label>
-                        <S.Label borderColor="#7588DF">
-                            <input type="radio" name={`contact${index}`} value="2" style={{width: '80px', height: '80px'}}/>
-                        </S.Label>
-                        <S.Label borderColor="#7588DF">
-                            <input type="radio" name={`contact${index}`} value="1" style={{width: '110px', height: '110px'}}/>
-                            <S.Span>매우 그렇다.</S.Span>
-                        </S.Label>
+                        {["1", "2", "3", "4", "5"].map(value => (
+                            <S.Label 
+                                borderColor={value < 3 ? "#CD6B73" :   value == 3 ?  "gray" : "#7588DF"} 
+                            >
+                                <S.Input 
+                                    Size={value === "5" || value === "1" ? '110px' : value === "4" || value === "2" ? '80px' : '50px'}
+                                    type="radio" 
+                                    name={`contact${index}`} 
+                                    value={value} 
+                                    checked={answers[index] === value}
+                                    onChange={handleRadioChange(index)}
+                                />
+                                <S.Span>{value === "5" ? "매우 그렇지 않다." : value === "1" ? "매우 그렇다." : ""}</S.Span>
+                            </S.Label>
+                        ))}
                     </S.Radios>
                 </S.TestPart>  
             ))}
+
+            <button onClick={() => console.log(answers)}>결과 보기</button>  
         </S.TestForm>
     </div>
 }
