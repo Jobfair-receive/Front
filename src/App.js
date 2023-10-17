@@ -3,7 +3,7 @@ import Main from "./pages/Main/Main";
 import Test from "./pages/Test/Test";
 import Chat from "./pages/Chat/Chat";
 import Header from "./components/common/Header";
-import View from "./pages/Chat/View";
+import Result from "./pages/Result/Result";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Route path="/" element={<Main />} />
       <Route path="/test" element={<Test />} />
       <Route path="/chat" element={<Chat />} />
-      <Route path="/view" element={<View />} />
+      <Route path="/result" element={<Result />} />
     </Routes>
     </>
   );
