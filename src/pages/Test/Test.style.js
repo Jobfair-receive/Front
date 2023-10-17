@@ -1,0 +1,101 @@
+import styled from "styled-components"
+
+export const TestText = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    margin: 1.2rem;
+    font-family: PretendardSemiBold;
+`
+export const TestInfo = styled.ul`
+    li::marker {
+    color: black;
+  }
+  li{
+    margin: 0.6rem;
+    font-family: PretendardRegular;
+  }
+  background-color: #E8E8E8;
+  padding: 1.2rem 70px;
+  margin: 1.2rem 3rem;
+  border-radius: 0.6rem;
+  font-size: 1.5rem;
+`
+
+export const TestForm = styled.form`
+ margin: auto 3rem;
+`
+
+export const TestPart = styled.div`
+ opacity: ${props => props.selected ? 1 : 0.5};
+`
+export const Question = styled.div`
+    font-size: 2.2rem;    
+    margin: 3.6rem 1.2rem;
+    font-family: PretendardMedium;
+`
+export const Radios = styled.fieldset`
+    margin-bottom: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-bottom: 0.12rem solid #D6D6D6;
+    padding: 1.2rem 4.8rem 6.6rem;  
+    
+    [type="radio"]{
+        vertical-align: middle;
+        appearance: none;
+        border: max(6px, 0.2em) solid gray;
+        border-radius: 50%;
+        transition: border 0.5s ease-in-out;
+        border-color: ${props => props.borderColor || 'gray'};
+    }
+    [type="radio"]:focus-visible {
+        outline: none;
+    }
+    [type="radio"]:disabled {
+        background-color: lightgray;
+        box-shadow: none;
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+`
+
+export const Label = styled.label`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input[type="radio"] {
+        border-color: ${props => props.borderColor || 'gray'};
+    }
+    input[type="radio"]:checked {
+        border: 0.4em solid ${props => props.borderColor || 'gray'};
+        background-color: ${props => props.borderColor || 'gray'}; 
+    }
+    input[type="radio"]:hover {
+        box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+        transition: background-color .5s ease-in-out; 
+        background-color: ${props => props.borderColor || 'gray'}; 
+        cursor: pointer;
+    }
+
+    position: relative;
+`
+
+export const Input = styled.input`
+    width: ${props => props.Size};
+    height: ${props => props.Size};
+`
+
+export const Span = styled.span`
+    position: absolute;
+    bottom: -2.7rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color:#333333;
+    width: 12rem;
+    font-family: PretendardMedium;
+`
