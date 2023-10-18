@@ -2,7 +2,7 @@ import customAxios from "../axios/customAxios";
 
 export const createAnswer = async (data) => {
     try {
-      const response = await customAxios.post("/경로경로", data);
+      const response = await customAxios.post("/test", data);
       return response.data;
  
     } catch (error) {
