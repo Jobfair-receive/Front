@@ -3,9 +3,11 @@ import * as S from "./Test.style"
 import Question from "./question";
 import ReactPaginate from "react-paginate";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import {  createAnswer } from "../../service/api/test";
 
 export default function Test(){
-
+    const navigate = useNavigate();
     const userPage = 8;
     const [pageNumber, setPageNumber] = useState(0);
     const pageCount = Math.ceil(Question.length / userPage);
@@ -13,7 +15,7 @@ export default function Test(){
 
     const changePage = ({ selected }) => {
         setPageNumber(selected);
-        window.scrollTo(0, 500);
+        window.scrollTo(0, 300);
       };
 
       
@@ -31,8 +33,19 @@ export default function Test(){
         });
     };
 
-    const TestSubmit = () => {
-        console.log(answers);
+    const TestSubmit = async () => {
+        const postData = JSON.stringify(answers);
+        console.log(postData);
+        try {
+            const data = {
+              ...postData,
+            };
+            const postTestData = await createAnswer(data);
+            navigate("/");
+          } catch (error) {
+            alert("결과 생성에 실패했습니다!");
+            console.log(error.message);
+          }
     }
 
     return (
