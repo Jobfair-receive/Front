@@ -28,22 +28,22 @@ export const TestForm = styled.div`
 `
 
 export const TestPart = styled.div`
- opacity: ${props => props.selected ? 1 : 0.5};
+
+    opacity: ${props => props.selected ? 1 : 0.5};
 `
 export const Question = styled.div`
     font-size: 2.2rem;    
-    margin: 3.6rem 1.2rem;
+    margin: 3.6rem 1.2rem 0;
     font-family: PretendardMedium;
 `
 export const Radios = styled.fieldset`
-    margin-bottom: 1.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: none;
     border-bottom: 0.12rem solid #D6D6D6;
-    padding: 1.2rem 4.8rem 6.6rem;  
-    
+    padding: 2rem 4.8rem 4.5rem;  
+
     [type="radio"]{
         vertical-align: middle;
         appearance: none;
