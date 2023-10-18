@@ -13,6 +13,7 @@ export default function Test(){
 
     const changePage = ({ selected }) => {
         setPageNumber(selected);
+        window.scrollTo(0, 500);
       };
 
       
@@ -29,6 +30,10 @@ export default function Test(){
             [index]: event.target.value,
         });
     };
+
+    const TestSubmit = () => {
+        console.log(answers);
+    }
 
     return (
     <div style={{margin: "0px 20%"}}>
@@ -82,35 +87,20 @@ export default function Test(){
                 onClick={()=>setSelectedTestPart(0)}
             /> 
             </StyledPagination>
-           
             {
                 pageNumber===2
                 &&(
-                    <SubmitSection>
-                        <SubmitButton>
-                            아아아아아아아ㅏ
-                        </SubmitButton>
-                    </SubmitSection>
+                    <S.SubmitSection>
+                        <S.SubmitButton onClick={TestSubmit}>
+                            결과 보러 가기
+                        </S.SubmitButton>
+                    </S.SubmitSection>
                 )
             }
         </S.TestForm>
     </div>
     )
 }
-
-const SubmitSection = styled.div`
-    display: flex;
-    justify-content: center;
-    padding-bottom: 3rem;
-
-`
-const SubmitButton = styled.div`
-    background-color: red;
-    padding: 2rem;
-    border-radius: 2rem;
-    font-size: 1rem;
-    
-`
 
 const StyledPagination = styled.div`
 
@@ -144,7 +134,7 @@ const StyledPagination = styled.div`
      }
 
      .paginationActive > a { 
-         background-color:#007BFF; 
+         background-color:#7588DF; 
          color:white; 
      }
 

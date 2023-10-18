@@ -99,3 +99,34 @@ export const Span = styled.span`
     width: 12rem;
     font-family: PretendardMedium;
 `
+
+export const SubmitSection = styled.div`
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3rem;
+`
+
+export const SubmitButton = styled.div`
+    color: white;
+    padding: 2rem;
+    border-radius: 3rem;
+    height: 2rem;
+    width: fit-content;
+    font-size: 1.5rem;
+    font-family: PretendardSemiBold;
+    background-color: #7588DF;
+    cursor: pointer;
+
+    @keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+    &:hover{
+        transform: scale(1.09);
+        transition: transform 0.3s ease-in-out;
+    }
+`
