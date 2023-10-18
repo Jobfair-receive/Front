@@ -116,7 +116,7 @@ export const Question = [
     },
     {
         QuestionContents: "큼직하게 계획을 세우고 공부를 하면서 세부적인 계획을 세우고 조정하는 것이 아니라, 처음부터 세부적으로 계획을 세우는 편이다.",
-        IfYes: 'E',
+        IfYes: 'P',
         IfNo: 'E'
     },
 ]
