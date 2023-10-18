@@ -23,7 +23,7 @@ export const TestInfo = styled.ul`
   font-size: 1.5rem;
 `
 
-export const TestForm = styled.form`
+export const TestForm = styled.div`
  margin: auto 3rem;
 `
 
