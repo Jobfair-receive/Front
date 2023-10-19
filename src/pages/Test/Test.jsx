@@ -21,21 +21,35 @@ export default function Test(){
       
     const [selectedTestPart, setSelectedTestPart] = useState(0);
     const handleTestPartClick = (index) => {
-        setSelectedTestPart(index+1);   
+        setSelectedTestPart(index+1); 
     };
+
+    // const AddIf = (index, IfYes, IfNo) => {
+    //     setAnswers({
+    //         ...answers,
+    //         [index]: {
+    //             IfYes: IfYes,
+    //             IfNo: IfNo
+    //         }
+    //     });
+    // };
 
     const [answers, setAnswers] = useState({});
 
     const handleRadioChange = (index) => (event) => {
         setAnswers({
             ...answers,
-            [index]: event.target.value,
+            [index]: {
+                value: event.target.value,
+                IfYes: Question[index].IfYes,
+                IfNo: Question[index].IfNo    
+            }
         });
     };
 
     const TestSubmit = async () => {
         const postData = JSON.stringify(answers);
-        console.log(postData);
+        // console.log(postData);
         try {
             const data = {
               ...postData,
@@ -61,21 +75,23 @@ export default function Test(){
                 .slice(pageVisited, pageVisited + userPage)
                 .map((question, index) => (
                 <S.TestPart key={index}
-                    onClick={() => handleTestPartClick(index)}
+                    onClick={(index)=>{
+                        handleTestPartClick(index)
+                     }
+                    }
                     selected={selectedTestPart === index}
                 >
-                    <S.Question>{pageVisited+index+1}. {question}</S.Question>
+                    <S.Question>{pageVisited+index+1}. {question.QuestionContents}</S.Question>
                     <S.Radios>
                         {["1", "2", "3", "4", "5"].map(value => (
-                            <S.Label 
-                                borderColor={value < 3 ? "#CD6B73" :   value == 3 ?  "gray" : "#7588DF"} 
+                            <S.Label key={value}
+                                borderColor={value < 3 ? "#CD6B73" :   value === 3 ?  "gray" : "#7588DF"} 
                             >
                                 <S.Input 
-                                    Size={value === "5" || value === "1" ? '110px' : value === "4" || value === "2" ? '80px' : '50px'}
+                                    size={value === "5" || value === "1" ? '110px' : value === "4" || value === "2" ? '80px' : '50px'}
                                     type="radio" 
                                     name={`contact${pageVisited+index}`} 
                                     value={value} 
-                                    checked={answers[pageVisited+index] === value}
                                     onChange={handleRadioChange(pageVisited+index)}
                                 />
                                 <S.Span>{value === "5" ? "매우 그렇지 않다." : value === "1" ? "매우 그렇다." : ""}</S.Span>

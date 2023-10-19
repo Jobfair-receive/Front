@@ -86,8 +86,8 @@ export const Label = styled.label`
 `
 
 export const Input = styled.input`
-    width: ${props => props.Size};
-    height: ${props => props.Size};
+    width: ${props => props.size};
+    height: ${props => props.size};
 `
 
 export const Span = styled.span`

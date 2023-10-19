@@ -2,21 +2,22 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     width: 100%;
-    height: calc(100% - 80px);
+    height: calc(100% - 170px);
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: aliceblue;
 `;
 
 export const StartInfo = styled.div`
     margin-top: 30px;
-    height: 100%;
+    background-color: red;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    margin-bottom: 10rem;
+    margin-bottom: 1rem;
 `
 
 export const Goorm = styled.img`
@@ -58,7 +59,7 @@ export const ChatBox = styled.div`
     align-items: center;
     width: 60%;
     min-width: 600px;
-    margin-bottom: 80px;
+    margin-bottom: 2rem;
     position: fixed;
     bottom: 0;
 `
@@ -80,6 +81,13 @@ export const Airplane = styled.img`
     height: 37px;
     right: 20px;
 `
+
+export const MessageContainer = styled.div`
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: aliceblue;
+`;
 
 export const Message = styled.p`
   color: ${props => props.sender === 'user' ? 'blue' : 'red'};

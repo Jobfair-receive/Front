@@ -35,6 +35,7 @@ export default function Chat() {
       };
 
     return (
+        <div style={{margin: "0px 20%", height:"100%"}}>
         <S.Wrapper>
             {!isStarted ? (
             <S.StartInfo>
@@ -51,12 +52,16 @@ export default function Chat() {
 
            </S.StartInfo>
             ) : (
+            <S.MessageContainer>
+            {
                 chatList.map((msg, index) => (
                     <S.Message key={index} sender={(index % 2)&&"user"}>
                         {index % 2 === 0 ?  "You" :"Bot"}
                         : {msg}
                     </S.Message>
-                  ))                  
+                ))    
+            }
+            </S.MessageContainer>                  
             )}
             <S.ChatBox>
                 <S.ChatInput 
@@ -67,5 +72,6 @@ export default function Chat() {
                 <S.Airplane alt="비행기" src={SendEmoji} onClick={handleSubmit}/>                
             </S.ChatBox>
         </S.Wrapper>
+        </div>
     );
 }
