@@ -19,6 +19,13 @@ export default function Chat() {
         }
     };
 
+    const handleChatPress = (event) => {
+        const htmlElement = event.target;
+        const textContent = htmlElement.innerText;
+        setMessage(textContent);
+        handleSubmit(event);
+    };
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         setIsStarted(true); 
@@ -35,8 +42,8 @@ export default function Chat() {
       };
 
     return (
-        <div style={{margin: "0px 20%", height:"100%"}}>
         <S.Wrapper>
+        <S.TopContainer>
             {!isStarted ? (
             <S.StartInfo>
             <S.Goorm alt="구름" src={ThoughtEmoji}/>
@@ -45,9 +52,9 @@ export default function Chat() {
             
             <S.Exam>
                 <span style={{marginBottom: '10px'}}>이런 이야기를 할 수 있어요.</span>
-                <S.ExamText>이번에 성적을 20점 이상 올리기로 했는데 자신이 없어.</S.ExamText>
-                <S.ExamText>영어 단어를 효율적으로 외울 수 있는 방법이 있을까?</S.ExamText>
-                <S.ExamText>수학은 어떻게 공부하는 게 좋아?</S.ExamText>
+                <S.ExamText onClick={handleChatPress}>이번에 성적을 20점 이상 올리기로 했는데 자신이 없어.</S.ExamText>
+                <S.ExamText onClick={handleChatPress}>영어 단어를 효율적으로 외울 수 있는 방법이 있을까?</S.ExamText>
+                <S.ExamText onClick={handleChatPress}>수학은 어떻게 공부하는 게 좋아?</S.ExamText>
             </S.Exam>
 
            </S.StartInfo>
@@ -63,7 +70,9 @@ export default function Chat() {
             }
             </S.MessageContainer>                  
             )}
-            <S.ChatBox>
+        </S.TopContainer>
+
+           <S.ChatBox>
                 <S.ChatInput 
                     value={message} 
                     onChange={handleInputChange}
@@ -72,6 +81,5 @@ export default function Chat() {
                 <S.Airplane alt="비행기" src={SendEmoji} onClick={handleSubmit}/>                
             </S.ChatBox>
         </S.Wrapper>
-        </div>
     );
 }

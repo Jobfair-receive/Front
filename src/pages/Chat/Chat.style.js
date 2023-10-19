@@ -1,17 +1,22 @@
 import styled from "styled-components";
 
+
 export const Wrapper = styled.div`
-    width: 100%;
+    margin: 0 20%;
     height: calc(100% - 170px);
+`
+
+export const TopContainer = styled.div`
+    margin-top: 2rem;
+    width: 100%;
+    height: calc(70% - 7rem);
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aliceblue;
 `;
 
 export const StartInfo = styled.div`
     margin-top: 30px;
-    background-color: red;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -50,10 +55,11 @@ export const ExamText = styled.span`
     border: 2px solid #7588DF;
     padding: 10px 30px;
     border-radius: 50px;
+    cursor: pointer;
 `
 
 export const ChatBox = styled.div`
-    height: 90px;
+    height: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,7 +70,7 @@ export const ChatBox = styled.div`
     bottom: 0;
 `
 export const ChatInput = styled.input`
-    height: 90px;
+    height: 5rem;
     width: 100%;
     background-color: #F0F0F0;
     outline: none;
@@ -86,7 +92,6 @@ export const MessageContainer = styled.div`
     display: flex;
     width: 100%;
     flex-direction: column;
-    background-color: aliceblue;
 `;
 
 export const Message = styled.p`
