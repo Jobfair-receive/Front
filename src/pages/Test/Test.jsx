@@ -42,13 +42,15 @@ export default function Test(){
             console.log(Question.length, Object.keys(answers).length)
             return;
         }
-        const postData = JSON.stringify(answers);
+        
         try {
             const data = {
-            ...postData,
+            ...answers,
             };
             const postTestData = await createAnswer(data);
-            navigate("/");
+            console.log(postTestData)
+            const params = new URLSearchParams(postTestData).toString();
+            navigate('/result?' + params);
         } catch (error) {
             alert("결과 생성에 실패했습니다!");
             console.log(error.message);

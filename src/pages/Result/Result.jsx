@@ -1,20 +1,38 @@
 import styled from "styled-components";
 import { ResultData } from "./RsultData";
 import { RsultTypeData } from "./RsultData";
+import { useLocation } from 'react-router-dom';
 
 export default function Result(){
+  const location = useLocation();
+  const urlParams = new URLSearchParams(location.search);
+  const mbti = urlParams.get('mbti');
+  const msti = urlParams.get('msti');
+
+
   return (
-    <Container>
+    <Container onClick={()=> console.log(mbti, msti)}>
       <Title>
         이런 <b>유형</b>인 것 같아요.
       </Title>
       <BoxAlign>
-        {ResultData.map((item) => (
+        
+        {/* {ResultData.map((item) => (
           <GrayBox key={item.type}>
             <Img src={"./images/emoji.png"} alt="이미지" />
             <TypeTitle><b>{item.type}</b> 형</TypeTitle>
           </GrayBox>
-        ))}
+        ))} */}
+
+        <GrayBox>
+            <Img src={"./images/emoji.png"} alt="이미지" />
+            <TypeTitle><b>{mbti}</b> 형</TypeTitle>
+          </GrayBox>
+          <GrayBox>
+            <Img src={"./images/emoji.png"} alt="이미지" />
+            <TypeTitle><b>{msti}</b> 형</TypeTitle>
+          </GrayBox>
+
       </BoxAlign>
       {RsultTypeData.map((item) => (
         <ExpContainer key={item.explain}>
