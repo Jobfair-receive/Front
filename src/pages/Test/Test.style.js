@@ -34,6 +34,8 @@ export const Question = styled.div`
     font-size: 2.2rem;    
     margin: 3.6rem 1.2rem 0;
     font-family: PretendardMedium;
+    text-indent: -1.7em;
+    padding-left: 1em;
 `
 export const Radios = styled.fieldset`
     display: flex;

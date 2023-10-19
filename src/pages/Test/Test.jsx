@@ -24,8 +24,7 @@ export default function Test(){
         setSelectedTestPart(index+1); 
     };
 
-    const [answers, setAnswers] = useState({});
-
+    const [answers, setAnswers] = useState([]);
     const handleRadioChange = (index) => (event) => {
         setAnswers({
             ...answers,
@@ -38,18 +37,22 @@ export default function Test(){
     };
 
     const TestSubmit = async () => {
+        if (Object.keys(answers).length < Question.length) {
+            alert("검사를 모두 완료 해주세요");
+            console.log(Question.length, Object.keys(answers).length)
+            return;
+        }
         const postData = JSON.stringify(answers);
-        // console.log(postData);
         try {
             const data = {
-              ...postData,
+            ...postData,
             };
             const postTestData = await createAnswer(data);
             navigate("/");
-          } catch (error) {
+        } catch (error) {
             alert("결과 생성에 실패했습니다!");
             console.log(error.message);
-          }
+        }
     }
 
     return (
@@ -65,7 +68,7 @@ export default function Test(){
                 .slice(pageVisited, pageVisited + userPage)
                 .map((question, index) => (
                 <S.TestPart key={index}
-                    onClick={(index)=>{
+                    onClick={()=>{
                         handleTestPartClick(index)
                      }
                     }
@@ -82,6 +85,7 @@ export default function Test(){
                                     type="radio" 
                                     name={`contact${pageVisited+index}`} 
                                     value={value} 
+                                    checked={answers[pageVisited+index]?.value === value}
                                     onChange={handleRadioChange(pageVisited+index)}
                                 />
                                 <S.Span>{value === "5" ? "매우 그렇지 않다." : value === "1" ? "매우 그렇다." : ""}</S.Span>
