@@ -1,16 +1,19 @@
 import styled from "styled-components"
 
 
-const NavBar = styled.nav`
+const StyledHeader = styled.header`
     padding: 0 80px;
     height: 80px;
     background-color: #7588DF;
-    display: flex;
-    align-items: center;
     z-index: 1;
     position: sticky;
 `   
 
+const NavBar = styled.nav`
+    height: 100%;
+    display: flex;
+    align-items: center;
+`
 const Logo = styled.span`
     font-family: PretendardBlack;
     font-size: 40px;
@@ -25,11 +28,13 @@ const StyledLink = styled.a`
 `
 
 export default function Header(){
-    return <NavBar>
+    return <StyledHeader>
+        <NavBar>
         <StyledLink href="/"><Logo>Acon</Logo></StyledLink>
         <StyledLink href="/test">학습 유형 검사</StyledLink>
         <StyledLink href="/chat">AI 상담</StyledLink>
-    </NavBar>
+        </NavBar>
+    </StyledHeader>
 }
 
 

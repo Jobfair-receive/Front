@@ -16,6 +16,7 @@ export const StartInfo = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    margin-bottom: 10rem;
 `
 
 export const Goorm = styled.img`
@@ -52,13 +53,14 @@ export const ExamText = styled.span`
 
 export const ChatBox = styled.div`
     height: 90px;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 60%;
     min-width: 600px;
     margin-bottom: 80px;
+    position: fixed;
+    bottom: 0;
 `
 export const ChatInput = styled.input`
     height: 90px;
@@ -78,3 +80,7 @@ export const Airplane = styled.img`
     height: 37px;
     right: 20px;
 `
+
+export const Message = styled.p`
+  color: ${props => props.sender === 'user' ? 'blue' : 'red'};
+`;

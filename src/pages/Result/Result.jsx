@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ResultData } from "./RsultData";
 import { RsultTypeData } from "./RsultData";
 
-const Result = () => {
+export const Result = () => {
   return (
     <div>
       <Title>
@@ -90,3 +90,4 @@ const ExplainTitle = styled.p`
 const Explain = styled.p`
   font-size: 15px;
 `;
+
