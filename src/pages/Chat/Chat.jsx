@@ -20,17 +20,21 @@ export default function Chat() {
     };
 
     const handleChatPress = (event) => {
+        event.preventDefault();
         const htmlElement = event.target;
         const textContent = htmlElement.innerText;
         setMessage(textContent);
+        console.log("클릭")
         handleSubmit(event);
     };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        console.log("서브밋")
         setIsStarted(true); 
-        if (message !== '') {
+        if (message) {
           setChatList([...chatList, message]);
+          console.log("set해버리기")
           try {
             const response = await customAxios.post('/chat', { message }); 
             setChatList(prevChatList => [...prevChatList, response.data.message]);

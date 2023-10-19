@@ -85,7 +85,7 @@ export default function Test(){
                     <S.Radios>
                         {["1", "2", "3", "4", "5"].map(value => (
                             <S.Label key={value}
-                                borderColor={value < 3 ? "#CD6B73" :   value === 3 ?  "gray" : "#7588DF"} 
+                                borderColor={value < 3 ? "#CD6B73" :   value == 3 ?  "gray" : "#7588DF"} 
                             >
                                 <S.Input 
                                     size={value === "5" || value === "1" ? '110px' : value === "4" || value === "2" ? '80px' : '50px'}
