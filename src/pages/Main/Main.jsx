@@ -66,6 +66,7 @@ const GoBtn = styled.button`
   background: var(--AConBlue, #7588df);
   margin: 70px 450px;
   border: none;
+  cursor: pointer;
 `;
 
 const Img = styled.div``;

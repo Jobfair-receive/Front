@@ -1,7 +1,7 @@
 import * as S from "./Chat.style"
 import SendEmoji from "../../asset/images/paper-airplane.svg";
 import ThoughtEmoji from "../../asset/images/emoji_thought.svg";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import customAxios from "../../service/axios/customAxios";
 
 export default function Chat() {
@@ -31,7 +31,6 @@ export default function Chat() {
         setIsStarted(true); 
         if (message) {
           setChatList([...chatList, message]);
-          console.log("set해버리기")
           try {
             const response = await customAxios.post('/chat', { message }); 
             setChatList(prevChatList => [...prevChatList, response.data.message]);
@@ -41,6 +40,16 @@ export default function Chat() {
           setMessage('');
         }
       };
+
+
+      const messagesEndRef = useRef(null);
+
+      const scrollToBottom = () => {
+          messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+      }
+  
+      useEffect(scrollToBottom, [chatList]);
+
 
     return (
         <div style={{overflowY: 'auto', overflowX: 'hidden'}}>
@@ -69,6 +78,8 @@ export default function Chat() {
                     </S.Message>
                 ))    
             }
+                         <div ref={messagesEndRef} />
+
             </S.MessageContainer>                  
             )}
         </S.TopContainer>
