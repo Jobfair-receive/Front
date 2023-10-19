@@ -52,6 +52,7 @@ const BoxContents = styled.p`
 `;
 
 const GoBtn = styled.button`
+  font-family: PretendardRegular;
   display: inline-flex;
   padding: 17px 34px;
   border-radius: 10px;

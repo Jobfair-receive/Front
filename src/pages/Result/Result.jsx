@@ -2,23 +2,22 @@ import styled from "styled-components";
 import { ResultData } from "./RsultData";
 import { RsultTypeData } from "./RsultData";
 
-export const Result = () => {
+export default function Result(){
   return (
-    <div style={{paddingTop:"80px"}}>
+    <Container>
       <Title>
         이런 <b>유형</b>인 것 같아요.
       </Title>
       <BoxAlign>
         {ResultData.map((item) => (
-          <GrayBox>
-            <img src={item.img} alt="이미지" />
-            <TypeTitle>{item.type}</TypeTitle>
+          <GrayBox key={item.type}>
+            <Img src={"./images/emoji.png"} alt="이미지" />
+            <TypeTitle><b>{item.type}</b> 형</TypeTitle>
           </GrayBox>
         ))}
       </BoxAlign>
-      <hr />
       {RsultTypeData.map((item) => (
-        <ExpContainer>
+        <ExpContainer key={item.explain}>
           <div>
             <ExplainTitle>🔍 이 유형은요...</ExplainTitle>
             <Explain>{item.explain}</Explain>
@@ -35,60 +34,67 @@ export const Result = () => {
             <ExplainTitle>📚 이런 책은 어떠세요?</ExplainTitle>
             <Explain>{item.book}</Explain>
           </div>
-        </ExpContainer>
+        </ExpContainer >
       ))}
-    </div>
+    </Container >
   );
 };
 
-export default Result;
+const Container = styled.div`
+  padding-top: 80px;
+  font-family: PretendardRegular;
+`;
 
 const Title = styled.p`
   font-size: 30px;
   margin-top: 2rem;
-  align-items: center;
-  justify-content: center;
-  margin-left: 410px;
+  text-align:center;
+`;
+
+const Img = styled.img`
+  width: 10rem;
+  height: 10rem;
 `;
 
 const BoxAlign = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 80px 0px 160px 0px;
-  gap: 30px;
-  margin-left: 50px;
+ display:flex; 
+ justify-content:center; 
+ align-items:center; 
+ flex-direction : row ; 
+ gap :30px ;
+  padding: 1rem 0 5rem;
+  border-bottom: 1px solid lightgray;
 `;
 
 const GrayBox = styled.div`
-  border-radius: 20px;
-  background: var(--LightGray, #f7f7f7);
-  width: 479px;
-  height: 243px;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
+ border-radius :20px ;
+ background-color:#f7f7f7 ;
+ width : 35rem; 
+ height : 20rem ; 
+ display:flex ; 
+ flex-direction: column;
+ align-items:center ;  
+ justify-content:center ;
 `;
 
 const TypeTitle = styled.p`
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 150px;
-  margin-left: 100px;
+ font-size :20px ;
+ text-align:center;
 `;
 
 const ExpContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-  margin-top: 100px;
+ display: flex;
+ padding: 4rem 20%;
+ flex-direction: column;
+ gap:100px ;
+ justify-content: center;
 `;
 
-const ExplainTitle = styled.p`
-  font-size: 20px;
-  font-weight: bold;
+const ExplainTitle = styled.h2`
+ font-size:30px;  
+ 
 `;
 
-const Explain = styled.p`
-  font-size: 15px;
+const Explain=styled.p`  
+ font-size:20px;   
 `;
-

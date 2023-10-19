@@ -1,12 +1,12 @@
 export const ResultData = [
   {
     id: 1,
-    type: "밤에 더 공부가 잘 되는 뻐꾸기 형",
+    type: "밤에 더 공부가 잘 되는 뻐꾸기",
     img: {},
   },
   {
     id: 2,
-    type: "아침에 더 공부가 잘 되는  아침형",
+    type: "아침에 더 공부가 잘 되는 아침",
     img: {},
   },
 ];
