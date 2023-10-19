@@ -69,7 +69,7 @@ export const ChatBox = styled.div`
     padding: 1.5rem 0;
     position: fixed;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), white);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.0), white);
 `
 export const ChatInput = styled.input`
     height: 5rem;
@@ -88,6 +88,7 @@ export const Airplane = styled.img`
     width: 37px;
     height: 37px;
     right: 20px;
+    cursor: pointer;
 `
 
 export const MessageContainer = styled.div`
@@ -95,15 +96,17 @@ export const MessageContainer = styled.div`
     width: 100%;
     flex-direction: column;
     margin-bottom: 8rem;
+    gap: 4rem;
 `;
 
-export const Message = styled.p`
+export const Message = styled.div`
     font-size: 1.2rem;
+    max-width: calc(100% - 4rem);
     font-family: PretendardSemiBold;
-    width: auto;
     color: ${props => props.sender === 'user' ? 'white' : 'black'};
     background-color: ${props => props.sender === 'user' ? '#7588DF' : '#E8EBF9'};
     padding: 1rem 2rem;
     border-radius: ${props => props.sender !== 'user' ? '15px 15px 15px 0px' : '15px 15px 0px 15px'};
     align-self:${props => props.sender === 'user' ? 'flex-end' : 'flex-start'};
+    word-wrap: break-word;
 `;
