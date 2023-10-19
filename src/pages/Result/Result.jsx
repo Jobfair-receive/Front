@@ -4,7 +4,7 @@ import { RsultTypeData } from "./RsultData";
 
 export const Result = () => {
   return (
-    <div>
+    <div style={{paddingTop:"80px"}}>
       <Title>
         이런 <b>유형</b>인 것 같아요.
       </Title>
@@ -45,6 +45,7 @@ export default Result;
 
 const Title = styled.p`
   font-size: 30px;
+  margin-top: 2rem;
   align-items: center;
   justify-content: center;
   margin-left: 410px;

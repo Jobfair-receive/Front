@@ -24,16 +24,6 @@ export default function Test(){
         setSelectedTestPart(index+1); 
     };
 
-    // const AddIf = (index, IfYes, IfNo) => {
-    //     setAnswers({
-    //         ...answers,
-    //         [index]: {
-    //             IfYes: IfYes,
-    //             IfNo: IfNo
-    //         }
-    //     });
-    // };
-
     const [answers, setAnswers] = useState({});
 
     const handleRadioChange = (index) => (event) => {

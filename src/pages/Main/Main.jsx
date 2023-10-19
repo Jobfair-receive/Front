@@ -3,9 +3,9 @@ import Emo from "../../components/img/emoji.png";
 
 const Main = () => {
   return (
-    <div style={{ padding: "100px",   overflowY: "hidden" }}>
+    <div style={{ display: "flex", flexDirection:"column", alignItems:"center", padding: "100px",   overflowY: "hidden" }}>
       <BackgroundBox>
-        <Row>
+        <Row >
           <BoxContents>
             <b>안녕하세요!</b> <br></br>
             AI Consultant, <b>ACon</b>은 <br></br>
@@ -30,6 +30,7 @@ export default Main;
 const Row = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 300px;
 `;
 
@@ -43,7 +44,7 @@ const BackgroundBox = styled.div`
 
 const BoxContents = styled.p`
   color: var(--DefaultGray-600, #4d4d4d);
-  font-family: Pretendard;
+  font-family:  PretendardRegular;
   font-size: 25px;
   font-style: normal;
   font-weight: 350;
@@ -64,6 +65,7 @@ const GoBtn = styled.button`
   border-radius: 10px;
   background: var(--AConBlue, #7588df);
   margin: 70px 450px;
+  border: none;
 `;
 
 const Img = styled.div``;
