@@ -1,11 +1,10 @@
 import styled from "styled-components"
 
-export const TestText = styled.div`
+export const TestText = styled.span`
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 3rem;
-    margin: 1.2rem;
     font-family: PretendardSemiBold;
 `
 export const TestInfo = styled.ul`
@@ -18,7 +17,7 @@ export const TestInfo = styled.ul`
   }
   background-color: #E8E8E8;
   padding: 1.2rem 70px;
-  margin: 1.2rem 3rem;
+  margin: 3rem 3rem;
   border-radius: 0.6rem;
   font-size: 1.5rem;
 `

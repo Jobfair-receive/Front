@@ -24,13 +24,10 @@ export default function Chat() {
         const htmlElement = event.target;
         const textContent = htmlElement.innerText;
         setMessage(textContent);
-        console.log("클릭")
-        handleSubmit(event);
     };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log("서브밋")
         setIsStarted(true); 
         if (message) {
           setChatList([...chatList, message]);
@@ -46,6 +43,7 @@ export default function Chat() {
       };
 
     return (
+        <div style={{overflowY: 'auto', overflowX: 'hidden'}}>
         <S.Wrapper>
         <S.TopContainer>
             {!isStarted ? (
@@ -66,9 +64,8 @@ export default function Chat() {
             <S.MessageContainer>
             {
                 chatList.map((msg, index) => (
-                    <S.Message key={index} sender={(index % 2)&&"user"}>
-                        {index % 2 === 0 ?  "You" :"Bot"}
-                        : {msg}
+                    <S.Message key={index} sender={(index % 2===0)&&"user"}>
+                        {msg}
                     </S.Message>
                 ))    
             }
@@ -85,5 +82,6 @@ export default function Chat() {
                 <S.Airplane alt="비행기" src={SendEmoji} onClick={handleSubmit}/>                
             </S.ChatBox>
         </S.Wrapper>
+        </div>
     );
 }

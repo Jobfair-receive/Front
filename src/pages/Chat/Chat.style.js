@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     margin: 0 20%;
     height: calc(100% - 170px);
+    margin-top: 7rem;   
 `
 
 export const TopContainer = styled.div`
@@ -65,9 +66,10 @@ export const ChatBox = styled.div`
     align-items: center;
     width: 60%;
     min-width: 600px;
-    margin-bottom: 2rem;
+    padding: 1.5rem 0;
     position: fixed;
     bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), white);
 `
 export const ChatInput = styled.input`
     height: 5rem;
@@ -92,8 +94,16 @@ export const MessageContainer = styled.div`
     display: flex;
     width: 100%;
     flex-direction: column;
+    margin-bottom: 8rem;
 `;
 
 export const Message = styled.p`
-  color: ${props => props.sender === 'user' ? 'blue' : 'red'};
+    font-size: 1.2rem;
+    font-family: PretendardSemiBold;
+    width: auto;
+    color: ${props => props.sender === 'user' ? 'white' : 'black'};
+    background-color: ${props => props.sender === 'user' ? '#7588DF' : '#E8EBF9'};
+    padding: 1rem 2rem;
+    border-radius: ${props => props.sender !== 'user' ? '15px 15px 15px 0px' : '15px 15px 0px 15px'};
+    align-self:${props => props.sender === 'user' ? 'flex-end' : 'flex-start'};
 `;

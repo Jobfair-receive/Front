@@ -4,9 +4,10 @@ import styled from "styled-components"
 const StyledHeader = styled.header`
     padding: 0 80px;
     height: 80px;
+    width: 100%;
     background-color: #7588DF;
     z-index: 1;
-    position: sticky;
+    position: fixed;
 `   
 
 const NavBar = styled.nav`

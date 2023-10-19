@@ -3,7 +3,7 @@ import Emo from "../../components/img/emoji.png";
 
 const Main = () => {
   return (
-    <div style={{ padding: "100px" }}>
+    <div style={{ padding: "100px",   overflowY: "hidden" }}>
       <BackgroundBox>
         <Row>
           <BoxContents>
@@ -35,6 +35,7 @@ const Row = styled.div`
 
 const BackgroundBox = styled.div`
   height: 100%;
+  margin-top: 2rem;
   border-radius: 20px;
   background: var(--LightGray, #f7f7f7);
   padding: 50px;
