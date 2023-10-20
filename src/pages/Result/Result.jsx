@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { ResultData } from "./ResultData";
 import { ResultTypeData } from "./ResultData";
 import { useLocation } from 'react-router-dom';
+import customAxios from "../../service/axios/customAxios";
+import { useEffect } from "react";
 
 export default function Result(){
   const location = useLocation();
@@ -11,8 +13,21 @@ export default function Result(){
 
   const mstiData = ResultTypeData.find(item => item.type == msti);
 
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await customAxios.post('/result', { mbti, msti}); 
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
   return (
-    <Container onClick={()=> console.log(mbti, msti)}>
+    <Container>
       <Title>
         이런 <b>유형</b>인 것 같아요.
       </Title>

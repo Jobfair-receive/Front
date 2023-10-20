@@ -29,16 +29,16 @@ export default function Chat() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         setIsStarted(true); 
-        if (message) {
-          setChatList([...chatList, message]);
+
+        setChatList([...chatList, message]);
           try {
             const response = await customAxios.post('/chat', { message }); 
-            setChatList(prevChatList => [...prevChatList, response.data.message]);
+            setMessage('');
+            setChatList(prevChatList => [...prevChatList, response.data.result]);
           } catch (error) {
             console.error(error);
           }
-          setMessage('');
-        }
+        
       };
 
 
