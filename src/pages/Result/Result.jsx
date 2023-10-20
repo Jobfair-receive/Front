@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ResultData } from "./RsultData";
 import { RsultTypeData } from "./RsultData";
 import { useLocation } from 'react-router-dom';
+import customAxios from "../../service/axios/customAxios";
 
 export default function Result(){
   const location = useLocation();
@@ -10,8 +11,17 @@ export default function Result(){
   const msti = urlParams.get('msti');
 
 
+  const handleClick = async () => {
+      try {
+        const response = await customAxios.post('/result', { mbti, msti}); 
+        console.log(response);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
   return (
-    <Container onClick={()=> console.log(mbti, msti)}>
+    <Container onClick={handleClick}>
       <Title>
         이런 <b>유형</b>인 것 같아요.
       </Title>

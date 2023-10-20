@@ -33,7 +33,8 @@ export default function Chat() {
           setChatList([...chatList, message]);
           try {
             const response = await customAxios.post('/chat', { message }); 
-            setChatList(prevChatList => [...prevChatList, response.data.message]);
+            // console.log(response.data.result);
+            setChatList(prevChatList => [...prevChatList, response.data.result]);
           } catch (error) {
             console.error(error);
           }
