@@ -26,11 +26,11 @@ export default function Result(){
         ))} */}
 
         <GrayBox>
-            <Img src={`./images/mbti/${mbti}`} alt="이미지" />
+            <Img src={`./images/mbti/${mbti}.png`} alt="이미지" />
             <TypeTitle><b>{ResultData[mbti]}</b> 형</TypeTitle>
           </GrayBox>
           <GrayBox>
-            <Img src={`./images/msti/${msti}`} alt="이미지" />
+            <Img src={`./images/msti/${msti}.png`} alt="이미지" />
             <TypeTitle><b>{ResultData[msti]}</b> 형</TypeTitle>
           </GrayBox>
 
