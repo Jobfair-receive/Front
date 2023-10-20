@@ -9,6 +9,7 @@ export default function Result(){
   const mbti = urlParams.get('mbti');
   const msti = urlParams.get('msti');
 
+  const mstiData = ResultTypeData.find(item => item.type == msti);
 
   return (
     <Container onClick={()=> console.log(mbti, msti)}>
@@ -25,31 +26,29 @@ export default function Result(){
         ))} */}
 
         <GrayBox>
-            <Img src={`./images/${mbti}`} alt="이미지" />
+            <Img src={`./images/mbti/${mbti}`} alt="이미지" />
             <TypeTitle><b>{ResultData[mbti]}</b> 형</TypeTitle>
           </GrayBox>
           <GrayBox>
-            <Img src={`./images/${msti}`} alt="이미지" />
+            <Img src={`./images/msti/${msti}`} alt="이미지" />
             <TypeTitle><b>{ResultData[msti]}</b> 형</TypeTitle>
           </GrayBox>
 
       </BoxAlign>
-      {ResultTypeData.map((item) => (
-        <ExpContainer key={item.explain}>
+        <ExpContainer key={mstiData.explain}>
           <div>
             <ExplainTitle>🔍 이 유형은요...</ExplainTitle>
-            <Explain>{item.explain}</Explain>
+            <Explain>{mstiData.explain}</Explain>
           </div>
           <div>
             <ExplainTitle>💁‍♂️ 이렇게 공부하면 더 좋아요.</ExplainTitle>
-            <Explain>{item.solution}</Explain>
+            <Explain>{mstiData.solution}</Explain>
           </div>
           <div>
             <ExplainTitle>🏃 이런 활동이 도움이 돼요.</ExplainTitle>
-            <Explain>{item.behavior}</Explain>
+            <Explain>{mstiData.behavior}</Explain>
           </div>
         </ExpContainer >
-      ))}
     </Container >
   );
 };

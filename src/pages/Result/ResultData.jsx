@@ -35,105 +35,105 @@ export const ResultData = {
 
 export const ResultTypeData = [
   {
-    id: 1,
+    type: "STCP",
+    explain: "바로 공부에 돌입하기 보다는 어떤 계획으로 합격할지 미리 계획을 세워두고 그대로 실행에 옮기는 스타일입니다. 공부를 함에 있어 시간이나 에너지를 가급적 낭비하지 않습니다. ",
+    solution: "이런 유형에 속하는 사람이 스터디를 하면서 다른 사람들의 기분을 맞춰주거나 신경을 쓰기 시작하면 멘탈이 흔들리고 공부에 영향을 끼칠 수도 있습니다. 주의하시는 게 좋겠습니다.",
+    behavior: "밤은 좋아요 "
+  },
+  {
+    type: "STCE",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
   {
-    id: 2,
+    type: "OTCP",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
   {
-    id: 3,
+    type: "OTCE",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
   {
-    id: 4,
+    type: "STDP",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
   {
-    id: 5,
+    type: "STDE",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
   {
-    id: 6,
+    type: "OTDP",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
   {
-    id: 7,
+    type: "OTDE",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
   {
-    id: 8,
+    type: "SACP",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
   {
-    id: 9,
+  type: "SADP",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
   {
-    id: 10,
+  type: "OACP",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
   {
-    id: 11,
+  type: "OADP",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
   {
-    id: 12,
+  type: "SACE",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
   {
-    id: 13,
+  type: "SAPE",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
   {
-    id: 14,
+  type: "OACE",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
   {
-    id: 14,
+  type: "OAPE",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
   {
-    id: 15,
+    type: "STDP",
     explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
     solution: "낮보다는 밤에 공부하세요. ",
     behavior: "밤은 좋아요 "
   },
-  {
-    id: 16,
-    explain: "낮보다는 밤이나 새벽에, 공부가 잘 되는 뻐꾸기 유형이에요. ",
-    solution: "낮보다는 밤에 공부하세요. ",
-    behavior: "밤은 좋아요 "
-  }
 ];
