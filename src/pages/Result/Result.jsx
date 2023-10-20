@@ -4,6 +4,7 @@ import { ResultTypeData } from "./ResultData";
 import { useLocation } from 'react-router-dom';
 import customAxios from "../../service/axios/customAxios";
 import { useEffect } from "react";
+import { useState } from "react";
 
 export default function Result(){
   const location = useLocation();
@@ -11,13 +12,16 @@ export default function Result(){
   const mbti = urlParams.get('mbti');
   const msti = urlParams.get('msti');
 
-  const mstiData = ResultTypeData.find(item => item.type == msti);
+  // const mstiData = ResultTypeData.find(item => item.type == msti);
+
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await customAxios.post('/result', { mbti, msti}); 
         console.log(response.data);
+        setData(response.data);
       } catch (error) {
         console.error(error);
       }
@@ -25,6 +29,7 @@ export default function Result(){
 
     fetchData();
   }, []);
+
 
   return (
     <Container>
@@ -50,18 +55,18 @@ export default function Result(){
           </GrayBox>
 
       </BoxAlign>
-        <ExpContainer key={mstiData.explain}>
+        <ExpContainer>
           <div>
             <ExplainTitle>🔍 이 유형은요...</ExplainTitle>
-            <Explain>{mstiData.explain}</Explain>
+            <Explain>{data.answer1}</Explain>
           </div>
           <div>
             <ExplainTitle>💁‍♂️ 이렇게 공부하면 더 좋아요.</ExplainTitle>
-            <Explain>{mstiData.solution}</Explain>
+            <Explain>{data.answer2}</Explain>
           </div>
           <div>
             <ExplainTitle>🏃 이런 활동이 도움이 돼요.</ExplainTitle>
-            <Explain>{mstiData.behavior}</Explain>
+            <Explain>{data.answer3}</Explain>
           </div>
         </ExpContainer >
     </Container >
