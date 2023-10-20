@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ResultData } from "./RsultData";
-import { RsultTypeData } from "./RsultData";
+import { ResultData } from "./ResultData";
+import { ResultTypeData } from "./ResultData";
 import { useLocation } from 'react-router-dom';
 
 export default function Result(){
@@ -25,16 +25,16 @@ export default function Result(){
         ))} */}
 
         <GrayBox>
-            <Img src={"./images/emoji.png"} alt="이미지" />
+            <Img src={`./images/${mbti}`} alt="이미지" />
             <TypeTitle><b>{mbti}</b> 형</TypeTitle>
           </GrayBox>
           <GrayBox>
-            <Img src={"./images/emoji.png"} alt="이미지" />
+            <Img src={`./images/${msti}`} alt="이미지" />
             <TypeTitle><b>{msti}</b> 형</TypeTitle>
           </GrayBox>
 
       </BoxAlign>
-      {RsultTypeData.map((item) => (
+      {ResultTypeData.map((item) => (
         <ExpContainer key={item.explain}>
           <div>
             <ExplainTitle>🔍 이 유형은요...</ExplainTitle>
@@ -47,10 +47,6 @@ export default function Result(){
           <div>
             <ExplainTitle>🏃 이런 활동이 도움이 돼요.</ExplainTitle>
             <Explain>{item.behavior}</Explain>
-          </div>
-          <div>
-            <ExplainTitle>📚 이런 책은 어떠세요?</ExplainTitle>
-            <Explain>{item.book}</Explain>
           </div>
         </ExpContainer >
       ))}
