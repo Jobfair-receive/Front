@@ -59,11 +59,11 @@ export default function Test(){
 
     return (
     <div style={{margin: "0px 20%"}}>
-        <S.TestText>뭐시기 뭐시기 검사</S.TestText>
+        <S.TestText>성격 및 학습 유형 검사</S.TestText>
         <S.TestInfo>
-            <li>질문은 총 25개로 총 소요시간은 한 10분정도 될듯?</li>
-            <li style={{color: '#FF0015', marker: 'marker: none'}}>내가 지금까지 해 온 행동, 현재의 모습에 따라 정직하게 답해주세요.</li>
-            <li>검사의 정확도를 위해 가급적 ‘보통’ 외의 것을 선택하기 바랍니다.</li>
+            <li>질문은 총 24가지로, 예상 소요 시간은 5분입니다.</li>
+            <li style={{color: '#FF0015', marker: 'marker: none'}}>내가 지금까지 해 온 행동, 현재의 모습에 따라 정직하게 답해 주세요.</li>
+            <li>정확한 결과를 위해서는 보통의 모습을 선택해 주세요.</li>
         </S.TestInfo>
         <S.TestForm>
             {Question
