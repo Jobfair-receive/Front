@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ResultData } from "./ResultData";
-import { ResultTypeData } from "./ResultData";
+import { requestData } from "../../mocks/requestData";
 import { useLocation } from 'react-router-dom';
 import customAxios from "../../service/axios/customAxios";
 import { useEffect } from "react";
@@ -19,8 +19,8 @@ export default function Result(){
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await customAxios.post('/result', { mbti, msti}); 
-        console.log(response.data);
+        const response = await customAxios.post('/result', { mbti, ...requestData[msti] }); 
+        console.log(response);
         setData(response.data);
       } catch (error) {
         console.error(error);
