@@ -60,7 +60,9 @@ export default function Result(){
         <ExpContainer>
         {data.length===0 ?
           (
-            <div>로딩 중입니다...</div>
+            <div>
+              <Title><b>로딩 중</b>입니다...</Title>
+            </div>
           )
       :
       (
