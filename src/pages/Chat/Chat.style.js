@@ -42,6 +42,7 @@ export const SubTitle = styled.span`
 
 export const Exam = styled.div`
     margin-top: 40px;
+    margin-bottom: 10rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
