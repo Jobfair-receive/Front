@@ -17,9 +17,10 @@ export default function Result(){
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    console.log(requestData[msti])
     async function fetchData() {
       try {
-        const response = await customAxios.post('/result', { mbti, ...requestData[msti] }); 
+        const response = await customAxios.post('/result', { mbti, msti : requestData[msti] }); 
         console.log(response);
         setData(response.data);
       } catch (error) {
