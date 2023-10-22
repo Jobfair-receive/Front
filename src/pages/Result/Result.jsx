@@ -61,7 +61,7 @@ export default function Result(){
         {data.length===0 ?
           (
             <div>
-              <Title><b>로딩 중</b>입니다...</Title>
+              <Title><b>자세한 결과</b>를 로딩 중입니다...</Title>
             </div>
           )
       :
