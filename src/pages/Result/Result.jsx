@@ -58,26 +58,26 @@ export default function Result(){
       </BoxAlign>
 
         <ExpContainer>
-        {data ?
+        {data.length===0 ?
           (
-          <> 
-            <div>
-              <ExplainTitle>🔍 이 유형은요...</ExplainTitle>
-              <Explain>{data.answer1}</Explain>
-            </div>
-            <div>
-              <ExplainTitle>💁‍♂️ 이렇게 공부하면 더 좋아요.</ExplainTitle>
-              <Explain>{data.answer2}</Explain>
-            </div>
-            <div>
-              <ExplainTitle>🏃 이런 활동이 도움이 돼요.</ExplainTitle>
-              <Explain>{data.answer3}</Explain>
-            </div>
-          </>
+            <div>로딩 중입니다...</div>
           )
       :
       (
-        <div>로딩 중입니다...</div>
+        <> 
+        <div>
+          <ExplainTitle>🔍 이 유형은요...</ExplainTitle>
+          <Explain>{data.answer1}</Explain>
+        </div>
+        <div>
+          <ExplainTitle>💁‍♂️ 이렇게 공부하면 더 좋아요.</ExplainTitle>
+          <Explain>{data.answer2}</Explain>
+        </div>
+        <div>
+          <ExplainTitle>🏃 이런 활동이 도움이 돼요.</ExplainTitle>
+          <Explain>{data.answer3}</Explain>
+        </div>
+      </>
       )
       }
         </ExpContainer >
