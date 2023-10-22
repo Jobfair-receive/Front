@@ -106,6 +106,7 @@ export const Message = styled.div`
     color: ${props => props.sender === 'user' ? 'white' : 'black'};
     background-color: ${props => props.sender === 'user' ? '#7588DF' : '#E8EBF9'};
     padding: 1rem 2rem;
+    white-space: ${props => props.sender === 'user' ? 'none' : 'pre-line'};
     border-radius: ${props => props.sender !== 'user' ? '15px 15px 15px 0px' : '15px 15px 0px 15px'};
     align-self:${props => props.sender === 'user' ? 'flex-end' : 'flex-start'};
     word-wrap: break-word;

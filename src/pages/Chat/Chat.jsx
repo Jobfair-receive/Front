@@ -62,7 +62,7 @@ export default function Chat() {
             <S.SubTitle>학교 생활 중 조언을 받고 싶은 부분이 있다면, AI에게 한번 이야기해 보세요.</S.SubTitle>
             
             <S.Exam>
-                <span style={{marginBottom: '10px'}}>이런 이야기를 할 수 있어요.</span>
+                <span style={{marginBottom: '10rem'}}>이런 이야기를 할 수 있어요.</span>
                 <S.ExamText onClick={handleChatPress}>이번에 성적을 20점 이상 올리기로 했는데 자신이 없어.</S.ExamText>
                 <S.ExamText onClick={handleChatPress}>영어 단어를 효율적으로 외울 수 있는 방법이 있을까?</S.ExamText>
                 <S.ExamText onClick={handleChatPress}>수학은 어떻게 공부하는 게 좋아?</S.ExamText>
