@@ -46,14 +46,14 @@ export default function Result(){
           </GrayBox>
         ))} */}
 
-        <GrayBox>
+        <TypeBox>
             <Img src={`./images/mbti/${mbti}.png`} alt="이미지" />
-            <TypeTitle><b>{ResultData[mbti]}</b> 형</TypeTitle>
-          </GrayBox>
-          <GrayBox>
+            <TypeTitle><b><ExplainSpan>{ResultData[mbti]}</ExplainSpan></b> 형</TypeTitle>
+          </TypeBox>
+          <TypeBox>
             <Img src={`./images/msti/${msti}.png`} alt="이미지" />
-            <TypeTitle><b>{ResultData[msti]}</b> 형</TypeTitle>
-          </GrayBox>
+            <TypeTitle><b><ExplainSpan>{ResultData[msti]}</ExplainSpan></b> 형</TypeTitle>
+          </TypeBox>
 
       </BoxAlign>
 
@@ -68,15 +68,15 @@ export default function Result(){
       (
         <> 
         <div>
-          <ExplainTitle>🔍 이 유형은요...</ExplainTitle>
+          <ExplainTitle>🔍 이 <ExplainSpan>유형</ExplainSpan>은요...</ExplainTitle>
           <Explain>{data.answer1}</Explain>
         </div>
         <div>
-          <ExplainTitle>💁‍♂️ 이렇게 공부하면 더 좋아요.</ExplainTitle>
+          <ExplainTitle>💁‍♂️ <ExplainSpan>이렇게 공부하면</ExplainSpan> 더 좋아요.</ExplainTitle>
           <Explain>{data.answer2}</Explain>
         </div>
         <div>
-          <ExplainTitle>🏃 이런 활동이 도움이 돼요.</ExplainTitle>
+          <ExplainTitle>🏃 <ExplainSpan>이런 활동</ExplainSpan>이 도움이 돼요.</ExplainTitle>
           <Explain>{data.answer3}</Explain>
         </div>
       </>
@@ -88,7 +88,7 @@ export default function Result(){
 };
 
 const Container = styled.div`
-  padding-top: 80px;
+  padding-top: 152px;
   font-family: PretendardRegular;
 `;
 
@@ -104,29 +104,29 @@ const Img = styled.img`
 `;
 
 const BoxAlign = styled.div`
- display:flex; 
- justify-content:center; 
- align-items:center; 
- flex-direction : row ; 
- gap :30px ;
+  display:flex; 
+  justify-content:center; 
+  align-items:center; 
+  flex-direction : row ; 
+  gap :30px ;
   padding: 1rem 0 5rem;
   border-bottom: 1px solid lightgray;
 `;
 
-const GrayBox = styled.div`
- border-radius :20px ;
- background-color:#f7f7f7 ;
- width : 35rem; 
- height : 20rem ; 
- display:flex ; 
- flex-direction: column;
- align-items:center ;  
- justify-content:center ;
+const TypeBox = styled.div`
+  border-radius :20px ;
+  background-color:#F6F8FF ;
+  width : 35rem; 
+  height : 20rem ; 
+  display:flex ; 
+  flex-direction: column;
+  align-items:center ;  
+  justify-content:center ;
 `;
 
 const TypeTitle = styled.p`
- font-size :20px ;
- text-align:center;
+  font-size: 20px;
+  text-align:center;
 `;
 
 const ExpContainer = styled.div`
@@ -144,4 +144,8 @@ const ExplainTitle = styled.h2`
 
 const Explain=styled.p`  
  font-size:20px;   
+`;
+
+const ExplainSpan = styled.span`
+  background-color: #E8EDFF;
 `;
