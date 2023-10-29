@@ -4,7 +4,7 @@ export const TestText = styled.span`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: PretendardSemiBold;
 `
 export const TestInfo = styled.ul`
@@ -15,7 +15,7 @@ export const TestInfo = styled.ul`
     margin: 0.6rem;
     font-family: PretendardRegular;
   }
-  background-color: #E8E8E8;
+  background-color: #F7F7F7;
   padding: 1.2rem 70px;
   margin: 3rem 3rem;
   border-radius: 0.6rem;
@@ -23,7 +23,7 @@ export const TestInfo = styled.ul`
 `
 
 export const TestForm = styled.div`
- margin: auto 3rem;
+ margin: auto 0.4rem;
 `
 
 export const TestPart = styled.div`
@@ -31,7 +31,7 @@ export const TestPart = styled.div`
     opacity: ${props => props.selected ? 1 : 0.5};
 `
 export const Question = styled.div`
-    font-size: 2.2rem;    
+    font-size: 1.9rem;    
     margin: 3.6rem 1.2rem 0;
     font-family: PretendardMedium;
     text-indent: -1.7em;

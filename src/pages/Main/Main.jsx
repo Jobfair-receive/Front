@@ -58,16 +58,22 @@ const GoBtn = styled.button`
   border-radius: 10px;
   font-size: 20px;
   font-weight: border;
-  color: white;
   width: 250px;
   height: 100px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  background: var(--AConBlue, #7588df);
   margin: 70px 450px;
   border: none;
+  color: #7588df;
+  background-color: #E8EDFF;
   cursor: pointer;
+  &:hover {
+    color: white;
+    background: var(--AConBlue, #7588df);
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+  }
 `;
 
 const Img = styled.div``;

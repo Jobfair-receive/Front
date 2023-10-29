@@ -62,7 +62,7 @@ export default function Test(){
         <S.TestText>성격 및 학습 유형 검사</S.TestText>
         <S.TestInfo>
             <li>질문은 총 24가지로, 예상 소요 시간은 5분입니다.</li>
-            <li style={{color: '#FF0015', marker: 'marker: none'}}>내가 지금까지 해 온 행동, 현재의 모습에 따라 정직하게 답해 주세요.</li>
+            <li style={{color: '#7588df', marker: 'marker: none'}}>내가 지금까지 해 온 행동, 현재의 모습에 따라 정직하게 답해 주세요.</li>
             <li>정확한 결과를 위해서는 보통의 모습을 선택해 주세요.</li>
         </S.TestInfo>
         <S.TestForm>
@@ -83,7 +83,7 @@ export default function Test(){
                                 borderColor={value < 3 ? "#CD6B73" :   value == 3 ?  "gray" : "#7588DF"} 
                             >
                                 <S.Input 
-                                    size={value === "5" || value === "1" ? '110px' : value === "4" || value === "2" ? '80px' : '50px'}
+                                    size={value === "5" || value === "1" ? '100px' : value === "4" || value === "2" ? '80px' : '50px'}
                                     type="radio" 
                                     name={`contact${pageVisited+index}`} 
                                     value={value} 
@@ -165,16 +165,17 @@ const StyledPagination = styled.div`
 
     .previousBtn,
     .nextBtn {
-        width: 3rem;
+        width: 4rem;
         height: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
         font-family: PretendardRegular;
+        font-size: 1.4rem;
         color: black;
         margin: 0 7rem;
         border-radius: 2rem;
-        padding: 0.2rem 0.8rem;
+        padding: 1rem 1.6rem;
     }
 
     .previousBtn{
