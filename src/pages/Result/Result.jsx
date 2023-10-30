@@ -9,17 +9,17 @@ import { useState } from "react";
 export default function Result(){
   const location = useLocation();
   const urlParams = new URLSearchParams(location.search);
-  const mbti = urlParams.get('mbti');
+  
+  const mbti = urlParams.get('mbti'); 
   const msti = urlParams.get('msti');
-
-  // const mstiData = ResultTypeData.find(item => item.type == msti);
 
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    function fetchData() {
+    console.log(mbti, msti)
+    async function fetchData() {
       try {
-        const response = customAxios.post('/result', { mbti, msti : requestData[msti] }); 
+        const response = await customAxios.post('/result', { mbti, msti : requestData[msti] }); 
         console.log(response);
         
         setData(response.data);
@@ -27,8 +27,10 @@ export default function Result(){
         console.error(error);
       }
     }
-
-    fetchData();
+    
+    if(mbti && msti){
+      fetchData();
+    }
   }, []);
 
 
