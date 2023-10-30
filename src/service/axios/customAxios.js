@@ -2,7 +2,6 @@ import axios from "axios";
 
 export const customAxios = axios.create({
   baseURL: "https://port-0-acon-backend-euegqv2blnyn4a7i.sel5.cloudtype.app",
-  withCredentials: true,
   headers: {
     "Content-Type": "application/json",
   },
