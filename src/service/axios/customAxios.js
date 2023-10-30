@@ -1,8 +1,11 @@
 import axios from "axios";
 
 export const customAxios = axios.create({
-  baseURL: "*",
+  baseURL: "http://localhost:3000",
   withCredentials: true,
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
 customAxios.interceptors.request.use(
