@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import customAxios from "../../service/axios/customAxios";
 import { useEffect } from "react";
 import { useState } from "react";
+import Loading from "../../components/common/Loading";
 
 export default function Result(){
   const location = useLocation();
@@ -14,9 +15,9 @@ export default function Result(){
   const msti = urlParams.get('msti');
 
   const [data, setData] = useState([]);
+  const [loading, isLoading] = useState();
 
   useEffect(() => {
-    console.log(mbti, msti)
     async function fetchData() {
       try {
         const response = await customAxios.post('/result', { mbti, msti : requestData[msti] }); 
@@ -63,8 +64,7 @@ export default function Result(){
         {data.length===0 ?
           (
             <div>
-              
-              <Title><b>자세한 결과</b>를 로딩 중입니다...</Title>
+              <Loading />
             </div>
           )
       :
